@@ -25,7 +25,8 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        $default = Comic::all();
+        return view('comics.create', compact('default'));
     }
 
     /**

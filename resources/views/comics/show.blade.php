@@ -15,6 +15,6 @@
     <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
         @csrf
         @method('DELETE')
-        <input type="submit" value="Cancella Elemento">
+        <input id="delete_button" onclick="return confirm('Are you sure?');" type="submit" value="Cancella Elemento">
     </form>
 @endsection

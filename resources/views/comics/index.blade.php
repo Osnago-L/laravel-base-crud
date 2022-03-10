@@ -2,6 +2,7 @@
 @section('content')
   <div class="navigation-buttons">
     <a href="{{route("home")}}"><button>home</button></a>
+    <a href="{{route("comics.create")}}"><button>add comic</button></a>
   </div>
 
   <div class="container grid-col-4">
