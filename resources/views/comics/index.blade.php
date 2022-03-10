@@ -1,28 +1,19 @@
 @extends('template.template');
 @section('content')
-<table>
-    <tr>
-      <th>id</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Thumb</th>
-      <th>Price</th>
-      <th>Series</th>
-      <th>Sale_date</th>
-      <th>Type</th>
-    </tr>
+  <div class="navigation-buttons">
+    <a href="{{route("home")}}"><button>home</button></a>
+  </div>
 
-    @foreach ($comics as $element)
-        <tr>
-            <td>{{$element->id}}</td>
-            <td><a href="{{route("comics.show", $element->id )}}">{{$element->title}}</a></td>
-            <td>{{$element->description}}</td>
-            <td>{{$element->thumb}}</td>
-            <td>{{$element->price}}</td>
-            <td>{{$element->series}}</td>
-            <td>{{$element->sale_date}}</td>
-            <td>{{$element->type}}</td>
-        </tr>
-    @endforeach
-  </table>
+  <div class="container grid-col-4">
+      @foreach ($comics as $element)
+          <div class="flex-column-center">
+            <img class="thumb" src="{{$element->thumb}}" alt="">
+            <h5><a href="{{route("comics.show", $element->id )}}">{{$element->title}}</a></h5>
+            <span>{{$element->price}}</span>
+            <span>{{$element->sale_date}}</span>
+            <span>{{$element->type}}</span>
+          </div>
+      @endforeach
+  </div>
+
 @endsection
