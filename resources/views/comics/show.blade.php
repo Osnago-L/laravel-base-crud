@@ -10,5 +10,11 @@
     <p>{{$comic->sale_date}}</p>
     <p>{{$comic->type}}</p>
 
-    <a href="#"><button>Edit</button></a>
+    <a href="{{route('comics.edit', $comic->id)}}"><button>Edit</button></a>
+
+    <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <input type="submit" value="Cancella Elemento">
+    </form>
 @endsection
