@@ -44,7 +44,7 @@
         <li class="alert">{{ $message }}</li>
         @enderror
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create">
     </form> 
 
 @endsection
