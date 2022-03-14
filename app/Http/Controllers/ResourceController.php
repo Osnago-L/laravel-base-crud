@@ -37,6 +37,16 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "title" => 'required|min:1|max:50|unique:comics',
+            "description" => 'required',
+            "thumb" => 'required',
+            "price" => 'required|numeric',
+            "series" => 'required|min:1|max:50|',
+            "sale_date" => 'required|date',
+            "type" => 'required|min:1|max:50|',
+        ]);
+
         $data = $request->all();
         $newComic = new Comic();
         $newComic->title = $data["title"];
