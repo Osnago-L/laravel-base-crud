@@ -96,7 +96,7 @@ class ResourceController extends Controller
     {
 
         $request->validate([
-            "title" => 'required|min:1|max:50',
+            "title" => 'required|min:1|max:50|unique:comics,title,'.$comic->id,
             "description" => 'required',
             "thumb" => 'required',
             "price" => 'required|numeric',
